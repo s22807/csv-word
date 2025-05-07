@@ -11,7 +11,7 @@ import os
 #    print(p)
 
 
-df = pd.read_csv(config.plik_csv, sep=';')
+df = pd.read_csv(config.plik_csv, sep=';', encoding='cp1252')
 # df.info()
 df[df.columns] = df[df.columns].astype(str)
 # df.info()

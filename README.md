@@ -2,11 +2,18 @@
 ## Przenoszenie instalacji
 W celu przeniesienia instalacji (katalogu tej aplikacji) należy skorzystać z pliku requirements.txt okreslajacego zaleznosci skryptu
 Można skorzystać z python.exe znajdujacego sie w katalogu ./.venv (nie trzeba pobierac z internetu)
+
+Kroki
+
 Kroki:
-1. W terminalu wykonaj (znajdujac sie w katalogu projektu): `.\.venv\Scripts\python.exe -m venv <katalog docelowy>`
-2. `<katalog docelowy>\Scripts\activate`
-3. `pip install -r .\requirements.txt`
-Gotowe, wystarczy przeniesc wszystkie pliki poza katalogiem .venv do <katalogu docelowego>. Python z zaleznosciami bedzie mogl byc uruchamiany z nowej lokalizacji
+1. Pobierz interpreter python ze strony https://www.python.org/downloads/ i zainstaluj. Ważne żeby na początku instalacji dodać python.exe do ścieżki (PATH). Wtedy nie trzeba wpisywać dokładnej lokalizacji programu, jedynie nazwę python.
+2. Utwórz katalog docelowy projektu, lokalizację do której będziesz chciał pobrać projekt. 
+3. Przejdź do katalogu docelowego uruchamiajac w nim terminal cmd lub uruchamiając w dowolnej lokalizacji i wykonując polecenie `cd <katalog projektu>`
+4. Następnie uruchom polecenie `git clone https://github.com/s22807/csv-word.git`
+5. W terminalu wykonaj (znajdujac sie w katalogu projektu): `python -m venv <katalog docelowy>`
+6. `<katalog docelowy>\Scripts\activate`
+7. `pip install -r .\requirements.txt`
+Gotowe. Python z zaleznosciami bedzie mogl byc uruchamiany z nowej lokalizacji
 ## Uruchamianie
 Główny skrypt programu main.py należy uruchomić za pomocą wirtualnego srodowiska Python, żeby skorzystać z dociągnietych zależnosci (biblioteki pandas i python-docx)
 Kroki:
@@ -23,6 +30,7 @@ Skrypt można skonfigurować za pomocą pliku config.py. Jego struktura jest lis
 
 ## Przygotowanie wzoru worda
 Plik Word na podstawie ktorego maja byc generowane dokumenty do druku musza byc spreparowane w taki sposob aby skrypt mogl powiazac z nim pola z pliku z danymi. Do pustego wzoru w miejsca w których maja sie pojawić dane z pliku z danymi należy w nawiasach klamrowych umiescic nazwe odpowiadajacego mu pola z pliku z danymi. W pliku Word mozna wielokrotnie umiescic ta sama nazwe pola, kazde bedzie odpowiednio podmienione.
+Szablon worda musi byc wskazany w pliku config.py
 
 ## Przygotowanie danych do podmiany
-Plik danych musi byc z excela wyeksportowany do pliku .csv z separatorem srednikiem (;) 
+Plik danych musi byc z excela wyeksportowany do pliku .csv z separatorem srednikiem (;) i wskazany w pliku config.py
